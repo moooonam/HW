@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 자손 결합자 : 하위의 모든 요소와 결합*/
+        div p1 {
+            color:blue;
+        }
+        /* 자식 결합자 : 하위의 바로 아래에 요소만 결합*/
+        div >p2 {
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p1>이건 무슨색일까</p1>
+        <span>
+            <p1>이건 무슨색일까</p1></span>
+    </div>
+    <div>
+        <p2>이건 무슨색이야</p2>
+        <span>
+            <p2>이건 무슨색이야</p2></span>
+    </div>       
+
+    
+</body>
+</html>

@@ -5,19 +5,19 @@ for tc in range(1,11):
     for i in range(100):
         for j in range(100):
             expend_list[i][j+1]=arr[i][j]
-    for q in range(101):
+    for q in range(101): #2 찾기
         if expend_list[99][q]==2:
             x=q
     y=99
     while y!=0: # 2부터 1을 따라서 올라와서 0열에 도착하면 멈추게
         if expend_list[y-1][x]==1 and expend_list[y][x-1]==0 and expend_list[y][x+1]==0: #위에가 1 이고 양옆이 0이면 위로 이동
             y-=1   
-        elif expend_list[y][x-1]==1 and expend_list[y-1][x]==1: #왼쪽 이동
+        elif expend_list[y][x-1]==1 and expend_list[y-1][x]==1: #위에가1이고 왼쪽이 1이면왼쪽 이동
             while expend_list[y][x-1]==1:
                 x-=1
-            y-=1
-        elif expend_list[y][x+1]==1 and expend_list[y-1][x]==1: #오른쪽 이동
+            y-=1#한칸 올라가기
+        elif expend_list[y][x+1]==1 and expend_list[y-1][x]==1: #위에가 1이고 오른쪽이 1이면 오른쪽 이동
             while expend_list[y][x+1]==1:
                 x+=1
-            y-=1
+            y-=1 #한칸 올라가기
     print(f'#{tc} {x-1}')

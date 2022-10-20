@@ -9,16 +9,19 @@ const inputs = [
     let count = 0
     let my_p = 0
     while (my_p + K < N) {
-        for (let i = K; i > 0; i--){
-            if ((my_p + i) in chargers) {
-                my_p += i
-                count += 1
-                break
-            } else {
-                count = 0
-                break
-            }
-        }
+      let flag = my_p
+      for (let i = K; i > 0; i--){
+        if (chargers.includes((my_p + i))) {
+            my_p += i
+            count += 1
+            // console.log(my_p)
+            break
+        } 
+      }
+      if (flag === my_p) {
+        count = 0
+        break
+      }
     }
     return console.log(count)
   }
